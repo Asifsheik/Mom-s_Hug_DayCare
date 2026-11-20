@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Mom's Hug Daycare Admin</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="dashboard.html" class="brand">Mom's Hug <small>DAYCARE · ADMIN</small></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <nav class="nav" id="nav">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="children.html">Children</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="reports.html">Daily reports</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <span class="pill-yellow" id="todayLabel"></span>
+        <h1>Little steps,<br><span class="accent">big dreams.</span></h1>
+        <p>A safe, loving and nurturing space for every little one. Here's everything happening at Mom's Hug today.</p>
+        <div class="btn-row">
+          <a href="attendance.html" class="btn btn-red">Take attendance</a>
+          <a href="children.html" class="btn btn-yellow">Register a child</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-art-inner">🎨 🧸 🚂 🧩</div>
+        <div class="float-badge"><strong id="pctBadge">0%</strong> attendance today</div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stat"><span class="stat-icon yellow">👶</span><strong id="stTotal">0</strong><span>Total children</span></div>
+      <div class="stat"><span class="stat-icon green">✅</span><strong id="stPresent">0</strong><span>Present today</span></div>
+      <div class="stat"><span class="stat-icon red">❌</span><strong id="stAbsent">0</strong><span>Absent</span></div>
+      <div class="stat"><span class="stat-icon blue">⏰</span><strong id="stNotMarked">0</strong><span>Not marked yet</span></div>
+      <div class="stat"><span class="stat-icon">📝</span><strong id="stReports">0</strong><span>Reports today</span></div>
+    </div>
+
+    <h2 class="section-h">Jump into</h2>
+    <div class="jump-grid">
+      <a href="children.html" class="jump-card"><span class="jump-icon yellow">👶</span><h3>Child registration</h3><p>Enrol new children and keep parent details at hand.</p><small id="jumpChildren"></small></a>
+      <a href="attendance.html" class="jump-card"><span class="jump-icon green">🗓️</span><h3>Attendance</h3><p>Check in, check out and look back at any day.</p><small id="jumpAttendance"></small></a>
+      <a href="reports.html" class="jump-card"><span class="jump-icon blue">📝</span><h3>Daily reports</h3><p>Meals, naps, activities and notes for parents.</p><small id="jumpReports"></small></a>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Upcoming activities</h3>
+        <ul class="schedule" id="schedule"></ul>
+      </div>
+      <div class="card">
+        <h3>Attendance this week</h3>
+        <div class="week-chart" id="weekChart"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>Mom's Hug Daycare</strong><p>A happy place for happy kids.</p></div>
+      <div><strong>📍 Find us</strong><p>Bazaar Street, Pudupattinam, Kalpakkam</p></div>
+      <div><strong>📞 For enquiries</strong><p>7904471992</p></div>
+    </div>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

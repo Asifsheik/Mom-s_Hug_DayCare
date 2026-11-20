@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Child Registration | Mom's Hug Daycare Admin</title>
+  <link rel="stylesheet" href="children.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="dashboard.html" class="brand">Mom's Hug <small>DAYCARE · ADMIN</small></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <nav class="nav" id="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="children.html" class="active">Children</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="reports.html">Daily reports</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <span class="module-tag">MODULE 2</span>
+    <h1 class="page-title">Child registration</h1>
+    <p class="page-sub">Enrol a new child and keep every family's details in one place.</p>
+
+    <div class="two-col wide-left">
+      <form class="card" id="childForm" novalidate>
+        <h3 class="form-title">New child</h3>
+        <div class="field-row">
+          <label>First name<input name="first" type="text" required></label>
+          <label>Last name<input name="last" type="text" required></label>
+        </div>
+        <label>Date of birth<input name="dob" type="date" required></label>
+        <fieldset class="radio-group">
+          <legend>Child is a</legend>
+          <label class="pill"><input type="radio" name="gender" value="Girl"><span>Girl</span></label>
+          <label class="pill"><input type="radio" name="gender" value="Boy"><span>Boy</span></label>
+          <label class="pill"><input type="radio" name="gender" value="Other"><span>Other</span></label>
+        </fieldset>
+        <label>Parent / guardian<input name="parent" type="text" required></label>
+        <div class="field-row">
+          <label>Mobile<input name="mobile" type="tel" placeholder="98XXXXXXXX" required></label>
+          <label>Email<input name="email" type="email"></label>
+        </div>
+        <label>Emergency contact (name and number)<input name="emergency" type="text"></label>
+        <label>Allergies or medical notes (optional)<textarea name="allergy" rows="3" placeholder="e.g. Peanuts"></textarea></label>
+        <p class="error" id="childError"></p>
+        <button type="submit" class="btn btn-red btn-block">Register child</button>
+      </form>
+
+      <div>
+        <div class="list-head">
+          <h2>Registered <span id="childCount" class="accent"></span></h2>
+          <input type="search" id="childSearch" class="search" placeholder="Search child or parent">
+        </div>
+        <div class="filters" id="childFilters">
+          <button class="chip active" data-group="all">All</button>
+          <button class="chip" data-group="infants">Infants</button>
+          <button class="chip" data-group="toddlers">Toddlers</button>
+          <button class="chip" data-group="preschool">Preschool</button>
+        </div>
+        <div class="child-grid" id="childList"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="children.js"></script>
+</body>
+</html>

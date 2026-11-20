@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance | Mom's Hug Daycare Admin</title>
+  <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="dashboard.html" class="brand">Mom's Hug <small>DAYCARE · ADMIN</small></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <nav class="nav" id="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="children.html">Children</a>
+        <a href="attendance.html" class="active">Attendance</a>
+        <a href="reports.html">Daily reports</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <span class="module-tag">MODULE 3</span>
+    <h1 class="page-title">Attendance</h1>
+    <p class="page-sub">Tap to check children in at drop-off and out at pick-up. Times are recorded automatically.</p>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="today">Today</button>
+      <button class="tab" data-tab="history">History</button>
+    </div>
+
+    <!-- Today -->
+    <div id="tab-today" class="two-col wide-left">
+      <div class="att-list" id="attList"></div>
+      <aside class="card summary">
+        <h3>Today so far</h3>
+        <ul class="legend">
+          <li><span class="dot green"></span>In the centre <b id="sCentre">0</b></li>
+          <li><span class="dot blue"></span>Picked up <b id="sPicked">0</b></li>
+          <li><span class="dot red"></span>Absent <b id="sAbsent">0</b></li>
+          <li><span class="dot grey"></span>Not marked <b id="sNot">0</b></li>
+        </ul>
+        <hr>
+        <p class="big"><strong id="sPresent">0</strong> / <span id="sTotal">0</span> present</p>
+      </aside>
+    </div>
+
+    <!-- History -->
+    <div id="tab-history" hidden>
+      <div class="card">
+        <h3>Last 7 days</h3>
+        <div class="table-wrap">
+          <table class="history-table" id="historyTable"></table>
+        </div>
+        <p class="legend-inline">
+          <span class="dot green"></span>Present
+          <span class="dot red"></span>Absent
+          <span class="dot ring"></span>Not marked
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="list-head">
+          <h3>Day details</h3>
+          <label class="inline-date">Date <input type="date" id="histDate"></label>
+        </div>
+        <p class="muted" id="daySummary"></p>
+        <div class="table-wrap">
+          <table class="day-table">
+            <thead>
+              <tr><th>Child</th><th>Status</th><th>Check in</th><th>Check out</th><th>Time at centre</th></tr>
+            </thead>
+            <tbody id="dayBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="attendance.js"></script>
+</body>
+</html>

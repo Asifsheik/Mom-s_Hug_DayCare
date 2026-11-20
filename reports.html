@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Reports | Mom's Hug Daycare Admin</title>
+  <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="dashboard.html" class="brand">Mom's Hug <small>DAYCARE · ADMIN</small></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <nav class="nav" id="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="children.html">Children</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="reports.html" class="active">Daily reports</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <span class="module-tag">MODULE 4</span>
+    <h1 class="page-title">Daily reports</h1>
+    <p class="page-sub">Food, naps, activities and a note from the teacher. One report per child each day.</p>
+
+    <div class="two-col wide-left">
+      <form class="card" id="reportForm" novalidate>
+        <h3 class="form-title">✏️ Write a report</h3>
+        <div class="field-row">
+          <label>Child
+            <select name="childId" id="rChild" required></select>
+          </label>
+          <label>Date<input type="date" name="date" id="rDate" required></label>
+        </div>
+
+        <fieldset>
+          <legend>🍴 Food</legend>
+          <div class="meal-row">
+            <span>Breakfast</span>
+            <div class="seg">
+              <label><input type="radio" name="breakfast" value="all" checked><span>Ate all</span></label>
+              <label><input type="radio" name="breakfast" value="most"><span>Most</span></label>
+              <label><input type="radio" name="breakfast" value="little"><span>A little</span></label>
+              <label><input type="radio" name="breakfast" value="none"><span>None</span></label>
+            </div>
+          </div>
+          <div class="meal-row">
+            <span>Lunch</span>
+            <div class="seg">
+              <label><input type="radio" name="lunch" value="all" checked><span>Ate all</span></label>
+              <label><input type="radio" name="lunch" value="most"><span>Most</span></label>
+              <label><input type="radio" name="lunch" value="little"><span>A little</span></label>
+              <label><input type="radio" name="lunch" value="none"><span>None</span></label>
+            </div>
+          </div>
+          <div class="meal-row">
+            <span>Snack</span>
+            <div class="seg">
+              <label><input type="radio" name="snack" value="all" checked><span>Ate all</span></label>
+              <label><input type="radio" name="snack" value="most"><span>Most</span></label>
+              <label><input type="radio" name="snack" value="little"><span>A little</span></label>
+              <label><input type="radio" name="snack" value="none"><span>None</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>🌙 Nap</legend>
+          <div class="field-row">
+            <label>Fell asleep<input type="time" name="sleepFrom"></label>
+            <label>Woke up<input type="time" name="sleepTo"></label>
+          </div>
+          <small class="muted">Leave empty if there was no nap.</small>
+        </fieldset>
+
+        <fieldset>
+          <legend>✨ Activities</legend>
+          <div class="chips" id="activityChips"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Mood</legend>
+          <div class="seg">
+            <label><input type="radio" name="mood" value="Happy" checked><span>Happy</span></label>
+            <label><input type="radio" name="mood" value="Calm"><span>Calm</span></label>
+            <label><input type="radio" name="mood" value="Tired"><span>Tired</span></label>
+            <label><input type="radio" name="mood" value="Fussy"><span>Fussy</span></label>
+            <label><input type="radio" name="mood" value="Unwell"><span>Unwell</span></label>
+          </div>
+        </fieldset>
+
+        <label>Teacher<input type="text" name="teacher" placeholder="e.g. Ms. Priya" required></label>
+        <label>Teacher remarks<textarea name="remarks" rows="3" placeholder="How was their day? Anything parents should know?"></textarea></label>
+
+        <p class="error" id="reportError"></p>
+        <div class="btn-row">
+          <button type="submit" class="btn btn-red">Save report</button>
+          <button type="button" class="btn btn-ghost" id="reportClear">Clear</button>
+        </div>
+      </form>
+
+      <div>
+        <div class="list-head">
+          <h2 id="reportDayTitle"></h2>
+          <label class="inline-date">Show day <input type="date" id="rDay"></label>
+        </div>
+        <div class="needs" id="needsBox"></div>
+        <div id="reportList"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="reports.js"></script>
+</body>
+</html>
