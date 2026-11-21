@@ -304,3 +304,5 @@ histDate.addEventListener("change", renderDayDetails);
 // ---------- 10. Start the page ----------
 renderToday();
 renderDayDetails();
+
+//done
