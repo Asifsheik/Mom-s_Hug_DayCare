@@ -1,6 +1,14 @@
 // ============ CHILDREN MODULE - YOUR TASKS ============
 //
 // 1. Mobile menu: when #menuBtn is clicked, toggle the "open" class on #nav.
+
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", function () {
+  nav.classList.toggle("open");
+});
+
 //
 // 2. Storage: create an array called "children" to hold registered children.
 //    Each child is an object, e.g. { first, last, dob, gender, parent,
